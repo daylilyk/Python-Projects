@@ -6,7 +6,7 @@ class Artist:
     password = 'iLoveArt123'
     account_number = 0
 
-#creating child class that will provide information to their social media.
+#creating child class that will provide information to their social media
 class SocialMedia(Artist):
     instagram: ' '
     twitter: ' '
