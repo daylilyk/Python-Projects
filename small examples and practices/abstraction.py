@@ -11,15 +11,17 @@
 # import abstraction widget
 from abc import ABC, abstractmethod
 
+#create class that will host abstract child function
 class Instruments(ABC):
     def cost(self, amount):
         print("I cost: ", amount)
         print("To buy me please pay: ", amount)
-
+    # create abstract child class that will pass the function
     @abstractmethod
     def youPaid(self,amount):
         pass
 
+# create function to be passed 
 class BuyMe(Instruments):
     def youPaid(self,amount):
         print('Thank you for your purchase of {}!'.format(amount))
@@ -29,4 +31,3 @@ if __name__ == "__main__":
     obj = BuyMe()
     obj.cost("$1,200")
     obj.youPaid("$1,200")
-
