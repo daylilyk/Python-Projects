@@ -104,10 +104,14 @@ class ParentWindow(Frame):
         cycle = current_time - timedelta(days=1)
         #Runs through each file in the source directory
         for i in source_files:
+            # Set i to represent files regardless of folder choice
             i = os.path.join(source,i)
+            # Tell program to get the created/modification time of each
+            # individual file
             modification_time = os.path.getmtime(i)
-            mod_datetime=datetime.fromtimestamp(modification_time)
-            print(mod_datetime)
+            # Change modification time to datetime data type instead of float
+            mod_datetime = datetime.fromtimestamp(modification_time)
+            # Tell program to transfer files only within mod_datetime and cycle time frame
             if mod_datetime >= cycle:
                 # Moves each file from the source to the destination
                 # Changed to i since I made 
